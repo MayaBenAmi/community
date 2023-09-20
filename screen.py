@@ -4,10 +4,15 @@ import pygame
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Happy Bunny")
 
+
 def draw_catch_earth_button(catch_earth_img):
     catch_earth_button = pygame.image.load(catch_earth_img)
     sized_catch_earth = pygame.transform.scale(catch_earth_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
     screen.blit(sized_catch_earth, consts.CATCH_EARTH_BUTTON_LOCATION)
+
+
+def screen_resize():
+    screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 
 
 def draw_turtle_button(turtle_img):
@@ -45,8 +50,6 @@ def draw_bushes(grass_img):
     sized_grass = pygame.transform.scale(grass, (100, 50))
     screen.blit(sized_grass, (300, 500))
     screen.blit(sized_grass, (600, 500))
-
-
 
 
 def draw_game():

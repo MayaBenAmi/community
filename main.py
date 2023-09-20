@@ -176,7 +176,7 @@ def recycle_vs_trash():
             sound.play(-1)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
-                    pygame.quit()
+                    # pygame.quit()
                     sound.stop()
                     run = False
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -186,7 +186,7 @@ def recycle_vs_trash():
 
             if has_won(game_array) or has_drawn(game_array):
                 sound.stop()
-                pygame.quit()
+                # pygame.quit()
                 run = False
 
     main()

@@ -7,10 +7,6 @@ from main import recycle_vs_trash
 pygame.init()
 
 
-
-
-
-
 def play_happy_bunny():
     running = True
     while running:
@@ -22,8 +18,10 @@ def play_happy_bunny():
                     mouse_y = pygame.mouse.get_pos()[1]
                     if check_instructions_y(mouse_y):
                         open_instructions()
+                        screen_resize()
                     if check_recycle_y(mouse_y):
                         recycle_vs_trash()
+                        screen_resize()
                     # if check_catch_earth_y(mouse_y):
                     #     # open bubbles game
                     # if check_turtle_y(mouse_y):
@@ -31,6 +29,7 @@ def play_happy_bunny():
             if event.type == pygame.QUIT:
                 running = False
             pygame.display.flip()
+
 
 while True:
     play_happy_bunny()

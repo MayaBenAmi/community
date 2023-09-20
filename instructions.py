@@ -1,4 +1,3 @@
-
 def open_instructions():
     import pygame
     pygame.init()
@@ -9,7 +8,6 @@ def open_instructions():
     PINK = (255, 228, 225)
 
     screen = pygame.display.set_mode(SIZE)
-
 
     def blit_text(surface, text, pos, font, color=BLACK):
         words = [word.split(' ') for word in text.splitlines()]
@@ -28,16 +26,19 @@ def open_instructions():
             x = pos[0]  # Reset the x.
             y += word_height  # Start on new row.
 
-
     TEXT = "Welcome to the game!\nYour task in the game is to keep the bunny happy, by raising awareness about protecting the environment.\n" \
            "As long as you play at least one game in a 24-hour span, your rabbit will remain happy! \nGOOD LUCK!"
 
     FONT = pygame.font.SysFont('Arial', 30)
 
-    while True:
+    done = False
+    while not done:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quit()
+            if event.type == pygame.KEYDOWN:
+                done = True
+
         screen.fill(PINK)
         pygame.display.set_caption("INSTRUCTIONS")
         blit_text(screen, TEXT, (20, 20), FONT)
