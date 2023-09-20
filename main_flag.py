@@ -8,6 +8,7 @@ import screen_flag as screen
 soldier_x = 0
 soldier_y = 0
 
+
 def init_board():
     game_field.build_board()
     game_field.add_flag()
@@ -28,32 +29,44 @@ def main():
     win = False
     dx = 0
     dy = 0
+    x = 0
+    y = 0
     while not game_over:
         # handle user events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                game_over = False
+                game_over = True
+            elif event.type == pygame.KEYUP:
+                dx = 0
+                dy = 0
             elif event.type == pygame.KEYDOWN and not explode:
                 if event.key == pygame.K_ESCAPE:
                     game_over = True
                 elif event.key == pygame.K_DOWN:
                     dy = 1
-                    soldier_y += dy
+                    dx = 0
                 elif event.key == pygame.K_UP:
-                    dy = 1
-                    soldier_y -= dy
+                    dy = -1
+                    dx = 0
                 elif event.key == pygame.K_LEFT:
-                    dx = 1
-                    soldier_x -= dx
+                    dx = -1
+                    dy = 0
                 elif event.key == pygame.K_RIGHT:
                     dx = 1
-                    soldier_x += dx
+                    dy = 0
                 # if the user presses "enter" he can see the mines for the first second after pressing
                 elif event.key == pygame.K_RETURN:
                     show_mines = True
                     start_show = time.time()
         if show_mines and time.time() > start_show + 1:
             show_mines = False
+
+
+        if not explode and not game_over and not show_mines:
+            x += dx
+            y += dy
+            soldier_x = x // 20
+            soldier_y = y // 20
 
         # making sure that the soldier stays on the board
         if soldier_x < 0:
@@ -93,4 +106,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
