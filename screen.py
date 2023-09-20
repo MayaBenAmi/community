@@ -4,16 +4,22 @@ import pygame
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Happy Bunny")
 
-def draw_bubbles_button(bubbles_img):
-    bubbles_button = pygame.image.load(bubbles_img)
-    sized_bubbles = pygame.transform.scale(bubbles_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
-    screen.blit(sized_bubbles, consts.BUBBLES_BUTTON_LOCATION)
+def draw_catch_earth_button(catch_earth_img):
+    catch_earth_button = pygame.image.load(catch_earth_img)
+    sized_catch_earth = pygame.transform.scale(catch_earth_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
+    screen.blit(sized_catch_earth, consts.CATCH_EARTH_BUTTON_LOCATION)
 
 
-def draw_flag_button(flag_img):
-    flag_button = pygame.image.load(flag_img)
-    sized_flag = pygame.transform.scale(flag_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
-    screen.blit(sized_flag, consts.FLAG_BUTTON_LOCATION)
+def draw_turtle_button(turtle_img):
+    turtle_button = pygame.image.load(turtle_img)
+    sized_turtle = pygame.transform.scale(turtle_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
+    screen.blit(sized_turtle, consts.TURTLE_BUTTON_LOCATION)
+
+
+def draw_recycle_button(recycle_img):
+    recycle_button = pygame.image.load(recycle_img)
+    sized_recycle = pygame.transform.scale(recycle_button, (consts.BUTTON_DIAMETER, consts.BUTTON_DIAMETER))
+    screen.blit(sized_recycle, consts.RECYCLE_BUTTON_LOCATION)
 
 
 def draw_instructions_button(instructions_img):
@@ -45,13 +51,10 @@ def draw_bushes(grass_img):
 
 def draw_game():
     screen.fill(consts.BG_COLOR)
-
-    draw_bubbles_button("trashdot.png")
-    draw_flag_button("turtledot.png")
+    draw_catch_earth_button("trashdot.png")
+    draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
+    draw_recycle_button("recyclevstrashdot.png")
     draw_happy_bunny("happy_bunny.png")
     draw_bushes("grass.png")
     pygame.display.flip()
-
-
-
