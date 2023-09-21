@@ -1,5 +1,7 @@
 import pygame
 import random
+import datetime
+import pickle
 from screen import *
 from clicks import *
 from instructions import open_instructions
@@ -16,6 +18,9 @@ pygame.init()
 pygame.mixer.init()
 sound = pygame.mixer.Sound("main.mp3")
 
+last_login = 0
+with open('person_data.pkl', 'wb') as fp:
+    pickle.dump(last_login, fp)
 
 def choose_random_dyk():
     dyk_choice = random.randint(1,5)
@@ -33,6 +38,12 @@ def choose_random_dyk():
 def play_happy_bunny():
     running = True
     while running:
+        with open('data.pkl', 'rb') as fp:
+            last_login = pickle.load(fp)
+        current_time = datetime.datetime.now()
+        time_difference = current_time - last_login
+        hour_difference = time_difference.total_seconds() /3600
+        if hour_difference> 24:
         draw_game()
         for event in pygame.event.get():
             sound.play()
@@ -47,16 +58,19 @@ def play_happy_bunny():
                     if check_recycle_y(mouse_y):
                         sound.stop()
                         recycle_vs_trash()
+                        last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
                     if check_catch_earth_y(mouse_y):
                         sound.stop()
                         catch_earth()
+                        last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
                     if check_turtle_y(mouse_y):
                         sound.stop()
                         flag()
+                        last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
             if event.type == pygame.KEYDOWN:
