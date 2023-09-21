@@ -57,7 +57,7 @@ def draw_game():
     draw_catch_earth_button("trashdot.png")
     draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
-    draw_recycle_button("recyclevstrashdot.png")
+    draw_recycle_button("recyclevstrash.png")
     draw_happy_bunny("happy_bunny.png")
     draw_bushes("grass.png")
     pygame.display.flip()
