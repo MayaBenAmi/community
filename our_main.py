@@ -4,6 +4,8 @@ from clicks import *
 from instructions import open_instructions
 from main import recycle_vs_trash
 from main_flag import flag
+from main_catch_earth import catch_earth
+
 
 pygame.init()
 pygame.mixer.init()
@@ -26,8 +28,10 @@ def play_happy_bunny():
                         sound.stop()
                         recycle_vs_trash()
                         screen_resize()
-                    # if check_catch_earth_y(mouse_y):
-                    #     # open bubbles game
+                    if check_catch_earth_y(mouse_y):
+                        sound.stop()
+                        catch_earth()
+                        screen_resize()
                     if check_turtle_y(mouse_y):
                         sound.stop()
                         flag()
