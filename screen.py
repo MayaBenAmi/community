@@ -70,7 +70,7 @@ def draw_game():
     draw_instructions_button("instructionsdot.png")
     draw_recycle_button("recyclevstrash.png")
     draw_bushes("grass.png")
-    with open('data.pkl', 'rb') as fp:
+    with open('login_time.pkl', 'rb') as fp:
         last_login = pickle.load(fp)
     current_time = datetime.datetime.now()
     time_difference = current_time - last_login
