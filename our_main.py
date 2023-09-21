@@ -36,12 +36,12 @@ def play_happy_bunny():
                         sound.stop()
                         flag()
                         screen_resize()
-            if event.type == pygame.QUIT:
+            if event.type == pygame.KEYDOWN and event.KEY==pygame.K_ESCAPE:
                 running = False
                 pygame.quit()
                 sound.stop()
             pygame.display.flip()
 
-running = play_happy_bunny()
-while running:
+
+while True:
     play_happy_bunny()
