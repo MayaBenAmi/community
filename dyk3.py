@@ -1,11 +1,11 @@
-def open_dyk():
+def open_dyk3():
     import pygame
     pygame.init()
 
     SIZE = WIDTH, HEIGHT = (500, 500)
     FPS = 50
     BLACK = (225, 225, 225)
-    PINK = (172, 223, 135)
+    PINK = (76, 154, 42)
 
     screen = pygame.display.set_mode(SIZE)
 
@@ -26,8 +26,8 @@ def open_dyk():
             x = pos[0]  # Reset the x.
             y += word_height  # Start on new row.
 
-    TEXT = "The average person creates almost five pounds of trash per day, \nand in 2018, American consumers created 146.2 million tons of trash! \nThis is very harmful for our planet!" \
-           "Thankfully, Americans also recycled and composted almost 94 million tons of waste – \na rate that has grown more than 300% in the past 38 years! \nWe have to keep recycling!"
+    TEXT = "How long does it take for a used aluminum drink can to be recycled into \na new one and put back on the grocery shelf? Just 60 days! It’s a good thing, \ntoo, because Americans love to recycle aluminum cans," \
+           "which are recycled more often than any other type of drink container and \ncan be recycled over and over again. \nIt is crucial that we keep on doing this good job:)"
 
     FONT = pygame.font.SysFont('Arial', 30)
 

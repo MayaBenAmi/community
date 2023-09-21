@@ -1,11 +1,11 @@
-def open_dyk():
+def open_dyk4():
     import pygame
     pygame.init()
 
     SIZE = WIDTH, HEIGHT = (500, 500)
     FPS = 50
     BLACK = (225, 225, 225)
-    PINK = (172, 223, 135)
+    PINK = (30, 86, 49)
 
     screen = pygame.display.set_mode(SIZE)
 
@@ -26,8 +26,8 @@ def open_dyk():
             x = pos[0]  # Reset the x.
             y += word_height  # Start on new row.
 
-    TEXT = "The average person creates almost five pounds of trash per day, \nand in 2018, American consumers created 146.2 million tons of trash! \nThis is very harmful for our planet!" \
-           "Thankfully, Americans also recycled and composted almost 94 million tons of waste – \na rate that has grown more than 300% in the past 38 years! \nWe have to keep recycling!"
+    TEXT = "Recycling helps our planet and our economy! \nIf all 37.4 million tons of recyclable materials from households were recycled each year, \nit would reduce greenhouse gas emissions equal to removing 20 million cars from U.S. highways" \
+           "and support the creation of 370,000 jobs. \nWe can see that we all have to be persistent. \nTell a friend today how important it is to recycle."
 
     FONT = pygame.font.SysFont('Arial', 30)
 
