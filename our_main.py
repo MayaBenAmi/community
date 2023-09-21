@@ -18,9 +18,9 @@ pygame.init()
 pygame.mixer.init()
 sound = pygame.mixer.Sound("main.mp3")
 
-last_login = 0
-with open('person_data.pkl', 'wb') as fp:
-    pickle.dump(last_login, fp)
+# last_login = 0
+# with open('person_data.pkl', 'wb') as fp:
+#     pickle.dump(last_login, fp)
 
 def choose_random_dyk():
     dyk_choice = random.randint(1,5)
@@ -52,19 +52,19 @@ def play_happy_bunny():
                     if check_recycle_y(mouse_y):
                         sound.stop()
                         recycle_vs_trash()
-                        last_login = datetime.datetime.now()
+                        # last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
                     if check_catch_earth_y(mouse_y):
                         sound.stop()
                         catch_earth()
-                        last_login = datetime.datetime.now()
+                        # last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
                     if check_turtle_y(mouse_y):
                         sound.stop()
                         flag()
-                        last_login = datetime.datetime.now()
+                        # last_login = datetime.datetime.now()
                         choose_random_dyk()
                         screen_resize()
             if event.type == pygame.KEYDOWN:
