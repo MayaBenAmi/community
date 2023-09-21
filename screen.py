@@ -76,13 +76,13 @@ def welcome_text(text_img):
 def draw_game(last_login):
     screen.fill(consts.BG_COLOR)
     welcome_text("text.png")
-    draw_volume_off_button("nosoundupd.png")
+    #draw_volume_off_button("nosoundupd.png")
     draw_catch_earth_button("catchearth.png")
     draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
     draw_recycle_button("recyclevstrash.png")
     draw_bushes("grass.png")
-    draw_happy_bunny("happy_bunny.png")
+    # draw_happy_bunny("happy_bunny.png")
 
     current_time = datetime.datetime.now()
     time_difference = current_time - last_login
