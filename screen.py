@@ -61,3 +61,30 @@ def draw_game():
     draw_happy_bunny("happy_bunny.png")
     draw_bushes("grass.png")
     pygame.display.flip()
+
+
+# def get_name_screen():
+#     import sys
+#     display = pygame.display.set_mode((400, 300))
+#     background = pygame.Surface((400, 300))
+#
+#     font = pygame.font.SysFont("Verdana", 20)
+#     text_value = ""
+#     text = font.render(text_value, True, (255, 255, 255))
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             pygame.quit()
+#             sys.exit()
+#         if event.type == pygame.KEYDOWN:
+#             if event.key == pygame.K_BACKSPACE:
+#                 text_value = text_value[:-1]
+#                 text = font.render(text_value, True, (255, 255, 255))
+#             if event.key == pygame.K_RETURN:
+#                 print(text_value)
+#         if event.type == pygame.TEXTINPUT:
+#             text_value += event.text
+#             text = font.render(text_value, True, (255, 255, 255))
+#
+#     display.blit(background, (0, 0))
+#     display.blit(text, (100, 150))
+#     pygame.display.update()
