@@ -19,7 +19,7 @@ pygame.mixer.init()
 sound = pygame.mixer.Sound("main.mp3")
 
 last_login = 0
-with open('login_time.pkl', 'wb') as fp:
+with open('person_data.pkl', 'wb') as fp:
     pickle.dump(last_login, fp)
 
 def choose_random_dyk():

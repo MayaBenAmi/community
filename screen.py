@@ -56,7 +56,7 @@ def draw_bushes(grass_img):
 def welcome_text(text_img):
     text = pygame.image.load(text_img)
     sized_text = pygame.transform.scale(text ,(600, 150))
-    screen.blit(sized_text, (500,200))
+    screen.blit(sized_text, (300,200))
 
 
 last_login = 0
