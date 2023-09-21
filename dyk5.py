@@ -5,7 +5,7 @@ def open_dyk5():
     SIZE = WIDTH, HEIGHT = (500, 500)
     FPS = 50
     BLACK = (225, 225, 225)
-    PINK = (164, 222, 2)
+    PINK = (76, 154, 42)
 
     screen = pygame.display.set_mode(SIZE)
 
