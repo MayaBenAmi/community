@@ -2,6 +2,7 @@ import consts
 import pygame
 import pickle
 import datetime
+import os
 
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 pygame.display.set_caption("Bunny To The Rescue")
@@ -59,10 +60,10 @@ def welcome_text(text_img):
     screen.blit(sized_text, (300,200))
 
 
-last_login = 0
-with open('person_data.pkl', 'wb') as fp:
-    pickle.dump(last_login, fp)
-def draw_game():
+# last_login = 0
+# with open('person_data.pkl', 'wb') as fp:
+#     pickle.dump(last_login, fp)
+def draw_game(last_login):
     screen.fill(consts.BG_COLOR)
     welcome_text("text.png")
     draw_catch_earth_button("catchearth.png")
@@ -70,8 +71,8 @@ def draw_game():
     draw_instructions_button("instructionsdot.png")
     draw_recycle_button("recyclevstrash.png")
     draw_bushes("grass.png")
-    with open('login_time.pkl', 'rb') as fp:
-        last_login = pickle.load(fp)
+    draw_happy_bunny("happy_bunny.png")
+
     current_time = datetime.datetime.now()
     time_difference = current_time - last_login
     hour_difference = time_difference.total_seconds() / 3600
