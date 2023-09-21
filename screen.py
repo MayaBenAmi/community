@@ -54,7 +54,7 @@ def draw_bushes(grass_img):
 
 def draw_game():
     screen.fill(consts.BG_COLOR)
-    draw_catch_earth_button("trashdot.png")
+    draw_catch_earth_button("catchearthdot.png")
     draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
     draw_recycle_button("recyclevstrash.png")
