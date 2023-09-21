@@ -38,12 +38,6 @@ def choose_random_dyk():
 def play_happy_bunny():
     running = True
     while running:
-        with open('data.pkl', 'rb') as fp:
-            last_login = pickle.load(fp)
-        current_time = datetime.datetime.now()
-        time_difference = current_time - last_login
-        hour_difference = time_difference.total_seconds() /3600
-        if hour_difference> 24:
         draw_game()
         for event in pygame.event.get():
             sound.play()

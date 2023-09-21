@@ -1,8 +1,10 @@
 import consts
 import pygame
+import pickle
+import datetime
 
 screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
-pygame.display.set_caption("Happy Bunny")
+pygame.display.set_caption("Bunny To The Rescue")
 
 
 def draw_catch_earth_button(catch_earth_img):
@@ -51,40 +53,30 @@ def draw_bushes(grass_img):
     screen.blit(sized_grass, (300, 500))
     screen.blit(sized_grass, (600, 500))
 
+def welcome_text(text_img):
+    text = pygame.image.load(text_img)
+    sized_text = pygame.transform.scale(text ,(600, 150))
+    screen.blit(sized_text, (500,200))
 
+
+last_login = 0
+with open('person_data.pkl', 'wb') as fp:
+    pickle.dump(last_login, fp)
 def draw_game():
     screen.fill(consts.BG_COLOR)
+    welcome_text("text.png")
     draw_catch_earth_button("catchearth.png")
     draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
     draw_recycle_button("recyclevstrash.png")
-    draw_happy_bunny("happy_bunny.png")
     draw_bushes("grass.png")
+    with open('data.pkl', 'rb') as fp:
+        last_login = pickle.load(fp)
+    current_time = datetime.datetime.now()
+    time_difference = current_time - last_login
+    hour_difference = time_difference.total_seconds() / 3600
+    if hour_difference > 24:
+        draw_sad_bunny("sad_bunny.png")
+    else:
+        draw_happy_bunny("happy_bunny.png")
     pygame.display.flip()
-
-
-# def get_name_screen():
-#     import sys
-#     display = pygame.display.set_mode((400, 300))
-#     background = pygame.Surface((400, 300))
-#
-#     font = pygame.font.SysFont("Verdana", 20)
-#     text_value = ""
-#     text = font.render(text_value, True, (255, 255, 255))
-#     for event in pygame.event.get():
-#         if event.type == pygame.QUIT:
-#             pygame.quit()
-#             sys.exit()
-#         if event.type == pygame.KEYDOWN:
-#             if event.key == pygame.K_BACKSPACE:
-#                 text_value = text_value[:-1]
-#                 text = font.render(text_value, True, (255, 255, 255))
-#             if event.key == pygame.K_RETURN:
-#                 print(text_value)
-#         if event.type == pygame.TEXTINPUT:
-#             text_value += event.text
-#             text = font.render(text_value, True, (255, 255, 255))
-#
-#     display.blit(background, (0, 0))
-#     display.blit(text, (100, 150))
-#     pygame.display.update()
