@@ -49,3 +49,11 @@ def check_recycle_y(mouse_y):
         return True
     else:
         return False
+
+def check_volume_y(mouse_y):
+    min_y = consts.VOLUME_BUTTON_LOCATION[1]
+    max_y = consts.VOLUME_BUTTON_LOCATION[1] + consts.BUTTON_DIAMETER
+    if min_y <= mouse_y <= max_y:
+        return True
+    else:
+        return False

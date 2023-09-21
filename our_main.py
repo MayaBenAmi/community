@@ -49,6 +49,10 @@ def play_happy_bunny():
                     if check_instructions_y(mouse_y):
                         open_instructions()
                         screen_resize()
+                    if check_volume_y(mouse_y):
+                        sound.stop()
+                        draw_volume_on_button("sound.png")
+                        screen_resize()
                     if check_recycle_y(mouse_y):
                         sound.stop()
                         recycle_vs_trash()

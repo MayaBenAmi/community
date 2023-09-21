@@ -16,6 +16,16 @@ def draw_catch_earth_button(catch_earth_img):
 def screen_resize():
     screen = pygame.display.set_mode((consts.WINDOW_WIDTH, consts.WINDOW_HEIGHT))
 
+def draw_volume_off_button(volume_off_button_img):
+    volume_off_button = pygame.image.load(volume_off_button_img)
+    sized_volume_off_button = pygame.transform.scale(volume_off_button, (50,50))
+    screen.blit(sized_volume_off_button, consts.VOLUME_BUTTON_LOCATION)
+
+def draw_volume_on_button(volume_on_button_img):
+    volume_on_button = pygame.image.load(volume_on_button_img)
+    sized_volume_on_button = pygame.transform.scale(volume_on_button, (50, 50))
+    screen.blit(sized_volume_on_button, consts.VOLUME_BUTTON_LOCATION)
+
 
 def draw_turtle_button(turtle_img):
     turtle_button = pygame.image.load(turtle_img)
@@ -55,8 +65,8 @@ def draw_bushes(grass_img):
 
 def welcome_text(text_img):
     text = pygame.image.load(text_img)
-    sized_text = pygame.transform.scale(text ,(600, 150))
-    screen.blit(sized_text, (300,200))
+    sized_text = pygame.transform.scale(text ,(400, 120))
+    screen.blit(sized_text, (300,70))
 
 
 # last_login = 0
@@ -65,6 +75,7 @@ def welcome_text(text_img):
 def draw_game():
     screen.fill(consts.BG_COLOR)
     welcome_text("text.png")
+    draw_volume_off_button("nosoundupd.png")
     draw_catch_earth_button("catchearth.png")
     draw_turtle_button("turtledot.png")
     draw_instructions_button("instructionsdot.png")
